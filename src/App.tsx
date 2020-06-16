@@ -11,10 +11,13 @@ interface IAppProps {
 }
 
 function App(props: IAppProps) {
-  const {scrollY} = useScroll();
+  // хук useScroll положит в стэйт значение текущей "высоты" страницы
+  const { scrollY } = useScroll();
 
+  // это просто хук для экстраполирования имени класса в className
   const [shrink, setShrink] = useState<string>('');
 
+  // каждые 250 мс проверяем высоту скролла, если больше 100 - устанавливаем имя класса, иначе сбрасываем
    (function() {
     setTimeout(()=>{
       if (scrollY >= 100) setShrink('shrink')

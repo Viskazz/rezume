@@ -2,10 +2,12 @@ import {useState, useEffect} from 'react';
 
 // кастомный хук
 export default function useScroll(){
-    const [scrollY, setScrollY] = useState<number>(document.body.getBoundingClientRect().top);
+    const [scrollY, setScrollY] = useState<number>(0);
   
+    // ф-я -обработчик события onScroll
     const listener = ()=> {
-      setScrollY(-document.body.getBoundingClientRect().top);
+      // pageYOffset на случай если браузер древний
+      setScrollY(-document.body.getBoundingClientRect().top || window.pageYOffset);
     };
     
     useEffect(() => {
@@ -15,5 +17,5 @@ export default function useScroll(){
       };
     });
   
-    return {scrollY}
+    return { scrollY }
   }
