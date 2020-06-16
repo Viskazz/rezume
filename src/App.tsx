@@ -24,10 +24,8 @@ function App() {
             <p>Web-разработчик</p>
           </div>
           <nav>
-            <a href="#">Обо мне</a>
-            <a href="#">Опыт работы</a>
-            <a href="#">Образование</a>
-            <a href="#">Контакты</a>
+            <p>+79778327368&nbsp;</p>
+            <p className={`${shrink}`}>exppro1@gmail.com</p>
           </nav>
         </div>
 

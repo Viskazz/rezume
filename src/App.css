@@ -34,6 +34,11 @@
     transition: height 0.3s;
 }
 
+.App-main {
+    padding-top: 30vh;
+    min-height: 200vh;
+}
+
 .App-inner {
     width: 90%;
     max-width: 69em;
@@ -44,75 +49,126 @@
 .App-header .name {
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 1.4em;
+    font-size: 1.1em;
     margin: 0;
     float: left;
     color: #ccc;
+}
+.App-header nav {
+    float: right;
 }
 .App-header .name,
 .App-header nav {
     display: inline-block;
     position: relative;
+    
 }
 
-.App-header .name p{
+.App-header nav p{
+    letter-spacing: 1px;
+    float: right;
+    margin-right: 1em;
+}
+
+.App-header .name p {
     float: left;
-    margin:0;
-    top:0;
+    margin: 0;
+    padding:0;
+    top: 0;
 }
 
+/* анти-подергивание */
 .App-header .name,
-.App-header nav a {
-    line-height: 20px;
+.App-header nav p {
+    line-height: 1em;
 }
-
-
-/* Анимация высоты */
-.App-header .name,
-/* .App-header .name p,
-.App-header .name h1, */
-.App-header nav a {
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-.App-header .name.shrink {
-    line-height: 10px;
-    font-size: .7em;
-}
-
-.App-header.App-header-shrink h1,
-.App-header.App-header-shrink nav a {
-    line-height: 10px;
-}
-
-.App-header.shrink{
-    height: 90px;
-}
-
 .App-header h1:hover {
     color: #fff;
 }
 
-.App-header nav {
-    float: right;
+/* Анимация высоты */
+.App-header .name, 
+.App-header nav p {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+/* плавная анимация только цвета при наведении курсора*/
+.App-header .name h1{
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;;
 }
 
-.App-main {
-    padding-top: 30vh;
-    min-height: 200vh;
+.App-header .name.shrink {
+    line-height:  1em;
+    font-size: .6em;
 }
 
-.App-link {
-    color: #61dafb;
+.App-header.shrink nav{
+    font-size: .7em;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
+.App-header .name.shrink p{
+    line-height:  1.5em;
+    font-size: .7em;
+}
+
+.App-header.shrink {
+    height: 90px;
+}
+
+
+
+
+
+
+/* Медиа запросы */
+
+
+@media screen and (max-width:1200px) {
+
+    .App-header{
+        height: 200px;
+    } 
+    .App-header nav p {
+        font-size: .6em;
+        letter-spacing: 1px;
+        float: none;
+        margin-right: 1em;
     }
-    to {
-        transform: rotate(360deg);
+    
+    .App-header nav p.shrink {
+        opacity: 0;
     }
+    .App-header .name,
+    .App-header nav p {
+        line-height: 1em;
+    }
+    .App-header .name{
+        line-height: 0.6em;
+    }
+    .App-header .name h1 {
+        font-size: .8em;
+    }
+    .App-header .name p {
+        font-size: .6em;
+    }
+    .App-header .name.shrink p{
+        line-height:  1em;
+        font-size: .6em;
+    }
+
 }
+
+/* @media screen and (max-width: 320px) {
+
+    .App-header nav a,
+    .App-header.App-header-shrink nav a {
+        line-height: 0;
+    }
+
+    .App-header nav p.shrink {
+        visibility: hidden;
+    }
+} */
