@@ -1,12 +1,19 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import useScroll from './hooks/useScroll';
 // import logo from './logo.svg';
 import './App.css';
 
-function App() {
+interface IAppProps {
+  name: string,
+  job: string,
+  phone: string,
+  email: string
+}
+
+function App(props: IAppProps) {
   const {scrollY} = useScroll();
 
-  const [shrink, setShrink] = useState('');
+  const [shrink, setShrink] = useState<string>('');
 
    (function() {
     setTimeout(()=>{
@@ -20,12 +27,12 @@ function App() {
       <header className={`App-header ${shrink}`}>
         <div className="App-inner">
           <div className={`name ${shrink}`}>
-            <h1>Пронин Виктор</h1>
-            <p>Web-разработчик</p>
+            <h1>{props.name}</h1>
+            <p>{props.job}</p>
           </div>
           <nav>
-            <p>+79778327368&nbsp;</p>
-            <p className={`${shrink}`}>exppro1@gmail.com</p>
+            <p>{props.phone}&nbsp;</p>
+            <p className={`${shrink}`}>{props.email}</p>
           </nav>
         </div>
 
@@ -34,6 +41,9 @@ function App() {
         <h1>Main Block</h1>
         <p>scrollY: {scrollY}</p>
         <p>shrink: {shrink}</p>
+        <section>
+          <div><p>Cardigan gluten-free photo booth pug, occupy ethnic bicycle rights disrupt ennui jean shorts art party raw denim Carles Tonx artisan. Freegan aesthetic skateboard, forage iPhone ugh umami tumblr McSweeney's chillwave biodiesel vinyl pitchfork gentrify asymmetrical. Sartorial synth wayfarers, freegan pork belly post-ironic ennui salvia direct trade shoreditch Wes Anderson pitchfork. Mumblecore Truffaut american apparel, Austin single-origin coffee post-ironic tofu retro Vice fanny pack narwhal Neutra skateboard 90's. Kogi sartorial post-ironic gentrify helvetica McSweeney's Schlitz, mustache 8-bit polaroid hella flexitarian viral kale chips tote bag. Banh mi PBR typewriter Banksy. Beard messenger bag deep v, keffiyeh lo-fi umami four loko vinyl lomo hoodie wolf banh mi.</p></div>
+        </section>
       </div>
     </div>
   );

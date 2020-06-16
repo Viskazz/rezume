@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 
 // кастомный хук
 export default function useScroll(){
-    const [scrollY, setScrollY] = useState(document.body.getBoundingClientRect().top);
+    const [scrollY, setScrollY] = useState<number>(document.body.getBoundingClientRect().top);
   
     const listener = ()=> {
       setScrollY(-document.body.getBoundingClientRect().top);
