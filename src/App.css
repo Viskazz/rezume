@@ -1,38 +1,118 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    /* min-height: 10vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    height: 230px;
+    overflow: hidden;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    transition: height 0.3s;
+}
+
+.App-inner {
+    width: 90%;
+    max-width: 69em;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.App-header .name {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.4em;
+    margin: 0;
+    float: left;
+    color: #ccc;
+}
+.App-header .name,
+.App-header nav {
+    display: inline-block;
+    position: relative;
+}
+
+.App-header .name p{
+    float: left;
+    margin:0;
+    top:0;
+}
+
+.App-header .name,
+.App-header nav a {
+    line-height: 20px;
+}
+
+
+/* Анимация высоты */
+.App-header .name,
+/* .App-header .name p,
+.App-header .name h1, */
+.App-header nav a {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.App-header .name.shrink {
+    line-height: 10px;
+    font-size: .7em;
+}
+
+.App-header.App-header-shrink h1,
+.App-header.App-header-shrink nav a {
+    line-height: 10px;
+}
+
+.App-header.shrink{
+    height: 90px;
+}
+
+.App-header h1:hover {
+    color: #fff;
+}
+
+.App-header nav {
+    float: right;
+}
+
+.App-main {
+    padding-top: 30vh;
+    min-height: 200vh;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
