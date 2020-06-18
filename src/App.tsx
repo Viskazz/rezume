@@ -1,5 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import useScroll from './hooks/useScroll';
+import { useFetch } from './hooks/useFetch';
+import { Experience3 } from './Experience3';
+import { Experience2 } from './Experience2';
+import { Experience1 } from './Experience1';
+import { Experience0 } from './Experience0';
+import { JobName } from './JobName';
 // import logo from './logo.svg';
 import './App.css';
 
@@ -18,13 +24,20 @@ function App(props: IAppProps) {
   const [shrink, setShrink] = useState<string>('');
 
   // каждые 250 мс проверяем высоту скролла, если больше 100 - устанавливаем имя класса, иначе сбрасываем
-   (function() {
-    setTimeout(()=>{
+  (function () {
+    setTimeout(() => {
       if (scrollY >= 100) setShrink('shrink')
       else setShrink('');
     }, 250)
   })()
-  
+
+  // 
+  // const data = useFetch('https://api.hh.ru/resumes/226e7603ff0809dbab0039ed1f4e67546c7377',{
+  //   method: 'GET'
+  // })
+
+  // console.log(data)
+
   return (
     <div className="App">
       <header className={`App-header ${shrink}`}>
@@ -41,12 +54,11 @@ function App(props: IAppProps) {
 
       </header>
       <div className="App-main">
-        <h1>Main Block</h1>
-        <p>scrollY: {scrollY}</p>
-        <p>shrink: {shrink}</p>
-        <section>
-          <div><p>Cardigan gluten-free photo booth pug, occupy ethnic bicycle rights disrupt ennui jean shorts art party raw denim Carles Tonx artisan. Freegan aesthetic skateboard, forage iPhone ugh umami tumblr McSweeney's chillwave biodiesel vinyl pitchfork gentrify asymmetrical. Sartorial synth wayfarers, freegan pork belly post-ironic ennui salvia direct trade shoreditch Wes Anderson pitchfork. Mumblecore Truffaut american apparel, Austin single-origin coffee post-ironic tofu retro Vice fanny pack narwhal Neutra skateboard 90's. Kogi sartorial post-ironic gentrify helvetica McSweeney's Schlitz, mustache 8-bit polaroid hella flexitarian viral kale chips tote bag. Banh mi PBR typewriter Banksy. Beard messenger bag deep v, keffiyeh lo-fi umami four loko vinyl lomo hoodie wolf banh mi.</p></div>
-        </section>
+        <JobName />
+        <Experience3 />
+        <Experience2 />
+        <Experience1 />
+        <Experience0 />
       </div>
     </div>
   );

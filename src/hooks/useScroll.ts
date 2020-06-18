@@ -12,10 +12,11 @@ export default function useScroll(){
     
     useEffect(() => {
       window.addEventListener("scroll", listener);
+      // useEffect / useLayoutEffect могут возвращать clean-up ф-ю (опционально)
       return () => {
         window.removeEventListener("scroll", listener);
       };
-    });
+    },[]);
   
     return { scrollY }
   }

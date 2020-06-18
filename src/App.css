@@ -1,21 +1,10 @@
 .App {
-    text-align: center;
+    margin: 1em
 }
-
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
-}
-
+ 
 .App-header {
     background-color: #282c34;
-    /* min-height: 10vh; */
+    opacity: .99;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,9 +23,31 @@
     transition: height 0.3s;
 }
 
+.App-header:after {
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: 40px;
+    background-size: contain;
+    background-image:  url('./logo.svg'); 
+    width: 100%;
+    height: 100%;
+    opacity : 0.05;
+    z-index: -1;
+    -webkit-transition: all 0.6;
+    -moz-transition: all 0.6s;
+    transition: all 0.6s;
+}
+
 .App-main {
     padding-top: 30vh;
     min-height: 200vh;
+    font-family: Helvetica, sans-serif;
+    color: #282c34;
+    
 }
 
 .App-inner {
@@ -61,7 +72,6 @@
 .App-header nav {
     display: inline-block;
     position: relative;
-    
 }
 
 .App-header nav p{
@@ -100,6 +110,12 @@
     transition: color 0.3s;;
 }
 
+/* сжатый header */
+.App-header.shrink:after {
+    background-position: -20px;
+    opacity: 0.5;
+}
+
 .App-header .name.shrink {
     line-height:  1em;
     font-size: .6em;
@@ -115,24 +131,60 @@
 }
 
 .App-header.shrink {
+    
     height: 90px;
+}
+/* App-main */
+.App-main .subheading ul li{
+    padding-left: 0;
+    display: list-item;
+}
+.App-main .subheading>p {
+    line-height: 0.4em;
+}
+
+.App-main .subheading .flex-wrapper  {
+    display: flex;
+    flex-direction: row;
+}
+
+.App-main .subheading .flex-wrapper .left {
+    min-width: 15%;
+    word-break: break-all;
+}
+
+.App-main .subheading .flex-wrapper .right {
+    margin-left: 2em;
+    max-width: 70%;
+}
+
+.App-main .subheading .flex-wrapper .right span {
+    font-weight: bold;
+}
+
+.App-main section{
+    margin-bottom: 2em;;
+    border-bottom: 1px solid #EEE;
+}
+
+.gray{
+    color: gray;
 }
 
 
-
-
-
-
 /* Медиа запросы */
-
 
 @media screen and (max-width:1200px) {
 
     .App-header{
         height: 200px;
     } 
+    .App-header:after {
+        background-position: 100px;
+    }
+    
     .App-header nav p {
-        font-size: .6em;
+        font-size: .8em;
         letter-spacing: 1px;
         float: none;
         margin-right: 1em;
@@ -145,30 +197,42 @@
     .App-header nav p {
         line-height: 1em;
     }
-    .App-header .name{
-        line-height: 0.6em;
-    }
+   
     .App-header .name h1 {
         font-size: .8em;
     }
     .App-header .name p {
         font-size: .6em;
     }
+    .App-header.shrink:after {
+        background-position: 105px;
+    }
     .App-header .name.shrink p{
         line-height:  1em;
-        font-size: .6em;
+        font-size: .8em;
+    }
+
+    .App-main h1{
+        font-size: 1em;
+    }
+
+    .App-main h2{
+        font-size: 0.8em;
+    }
+
+    .App-main .subheading .flex-wrapper {
+        flex-direction: column;
+    }
+
+    .App-main .subheading .flex-wrapper .right {
+        margin-left: 0em;
+        max-width: 100%;
+        line-height: 1.6;
+    }
+
+    .App-main .subheading .flex-wrapper .right ul, .App-main .subheading .flex-wrapper .right ul li {
+        margin: 0;
+        padding-left: 0em ;
     }
 
 }
-
-/* @media screen and (max-width: 320px) {
-
-    .App-header nav a,
-    .App-header.App-header-shrink nav a {
-        line-height: 0;
-    }
-
-    .App-header nav p.shrink {
-        visibility: hidden;
-    }
-} */
