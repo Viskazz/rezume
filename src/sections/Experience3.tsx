@@ -14,7 +14,7 @@ export const Experience3 = () =>{
                   <li>Постановка задач и участие в выборе архитектуры приложений.</li>
                   <li>Собеседование с фриланс-разработчиками, ревью кода, рефакторинг.</li>
                   <li>Работа как в команде, так и самостоятельная разработка (в работе использовались BitBucket, Trello, Slack).</li>
-                  <li>Уверенные знания JS (включая последние спецификации), HTML5, CSS3 </li>
+                  <li>Уверенные знания JS (включая последние спецификации), HTML5, CSS3.</li>
                   <li>Разработка SPA приложений с использованием ReactJS, в том числе с Server Side Rendering (Next.JS).</li>
                   <li>Хорошее знание ReactJS, Redux, React-Hooks, react-router, Saga, axios, async, promises и др. технологий.</li>
                   <li>TypeScript, в том числе миграция имеющихся проектов (frontend на React'e + backend), TSLint.</li>
@@ -25,11 +25,11 @@ export const Experience3 = () =>{
                   <li>Адаптивная верстка, media queryes, Flexbox.</li>
                   <li>Верстка с использованием Bootstrap.</li>
                   <li>Использование инструментов: npm, yarn, webpack.</li>
-                  <li>Опыт работы Git</li>
+                  <li>Опыт работы Git.</li>
                   <li>Опыт работы с websockets (также с фрэймворком Feathers).</li>
                   <li>Знание backend-технологий: Node.JS, Express, JWT, JSON + REST-API, Mocha+chai, а также БД Mongodb, Postgres, есть представление о GraphQL, опыт с CORS.</li>
                   <li>Отладка запросов с Postman.</li>
-                  <li>Опыт работы с Docker, nginx, настройка KVM-сервера в production</li>
+                  <li>Опыт работы с Docker, nginx, настройка KVM-сервера в production.</li>
                 </ul>
               </div>
             </div>

@@ -42,6 +42,12 @@
     transition: all 0.6s;
 }
 
+.App-header .contact-container {
+    display: flex;
+    flex-direction: column;
+}
+
+
 .App-main {
     padding-top: 30vh;
     min-height: 200vh;
@@ -135,6 +141,8 @@
     height: 90px;
 }
 /* App-main */
+
+  
 .App-main .subheading ul li{
     padding-left: 0;
     display: list-item;
@@ -152,6 +160,26 @@
     min-width: 15%;
     word-break: break-all;
 }
+
+.App-main .subheading .flex-wrapper .right .tags-container
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 10em;
+}
+
+.App-main .subheading .flex-wrapper .right .tags-container div
+{ 
+    margin: 0.3em;
+}
+
+.App-main .subheading .flex-wrapper .right .tags-container div span
+{ 
+    padding: 1em;
+    background-color: rgba(203,209,211,.3);
+}
+
 
 .App-main .subheading .flex-wrapper .right {
     margin-left: 2em;

@@ -14,6 +14,7 @@ export const useFetch = (url: string, options: {}) => {
     useEffect(() => {
 
         const fetchData = async () => {
+            // console.log(url, options)
             setIsLoading(true);
             try {
                 const res = await fetch(url, options);
@@ -30,7 +31,7 @@ export const useFetch = (url: string, options: {}) => {
 
         fetchData();
 
-    });
+    }, []);
 
     return { response, error, isLoading };
 }
