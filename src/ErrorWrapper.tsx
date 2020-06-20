@@ -6,30 +6,30 @@ type IErrorProps = {
 
 type IErrorState = {
     hasError: boolean,
-    error?: Error,
-    info?: ErrorInfo | undefined
+    error?: Error | null,
+    info: ErrorInfo | null
 };
 
 class ErrorWrapper extends Component<IErrorProps, IErrorState> {
     state = {
         hasError: false,
-        error: undefined,
-        info: undefined
+        error: null,
+        info: null as ErrorInfo | null 
     };
 
     componentDidCatch(error: Error, info: ErrorInfo) {
         this.setState({ hasError: true, error: error, info: info });
     }
 
-    render() {
-        const info1 = { ...this.state };
-        console.log(info1)
+    render(): React.ReactNode {
+            
         if (this.state.hasError) {
+            console.log(this.state.info )
             return (
                 <div>
                     <h1>Oops, something went wrong :(</h1>
                     <p>The error: {this.state.error}</p>
-                    {/* <p>Where it occured: { info1.componentStack }</p> */}
+                    <p>Where it occured: { this.state.info?.componentStack }</p>
                 </div>
             );
         };
