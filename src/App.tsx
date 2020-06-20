@@ -32,9 +32,9 @@ function App(props: IAppProps) {
   })()
 
 
-  const data = useFetch('https://hn.algolia.com/api/v1/search?query=redux', {
-    method: 'GET'
-  })
+  // const data = useFetch('https://hn.algolia.com/api/v1/search?query=redux', {
+  //   method: 'GET'
+  // })
 
   return (
     <Fragment>
